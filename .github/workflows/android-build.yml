@@ -23,6 +23,21 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      - name: Extract module ZIPs
+        shell: bash
+        run: |
+          set -e
+
+          mkdir -p extracted-modules
+
+          if [ -d "modules" ]; then
+            shopt -s nullglob
+            for zip in modules/*.zip; do
+              echo "Extracting $zip"
+              unzip -o "$zip" -d .
+            done
+          fi
+
       - name: Set up Gradle 8.7
         uses: gradle/actions/setup-gradle@v4
         with:
