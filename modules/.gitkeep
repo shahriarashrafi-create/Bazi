@@ -1,9 +1,0 @@
-Bazi/
-├── app/
-├── core/
-├── modules/
-│   └── .gitkeep
-├── .github/
-├── build.gradle.kts
-├── gradle.properties
-└── settings.gradle.kts
